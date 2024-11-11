@@ -13,8 +13,6 @@ This project is a Debian repository hosted on GitHub Pages.
 
 ### Official Repository
 
-NOTE: Replace `$YOUR_DISTRIBUTION` with your distribution code (`stable`/`unstable`/`focal`/`groovy`...) below.
-
 ```bash
 # Install some prerequisites needed by adding GPG public keys
 $ sudo apt-get install gnupg ca-certificates curl
@@ -23,7 +21,7 @@ $ sudo apt-get install gnupg ca-certificates curl
 $ curl -sSL https://qv2ray.net/debian/pubkey.gpg | sudo apt-key add -
 
 # Add the our official APT repository:
-$ echo "deb [arch=amd64] https://qv2ray.net/debian/ $YOUR_DISTRIBUTION main" | sudo tee /etc/apt/sources.list.d/qv2ray.list
+$ echo "deb [arch=amd64] https://qv2ray.net/debian/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/qv2ray.list
 
 # To update the APT index:
 $ sudo apt-get update
